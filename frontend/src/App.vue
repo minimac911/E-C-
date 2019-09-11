@@ -1,31 +1,102 @@
 <template>
+  <!-- MasterPage -->
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class = "parent">
+      <section>
+        <!-- Navigation Bar -->
+        <b-navbar>
+          <template slot="brand">
+            <b-navbar-item class = "itemHeight" href="/" >
+              <img
+                      src="../src/assets/images/Logo.png"
+              >
+            </b-navbar-item>
+          </template>
+          <template slot="start">
+            <b-navbar-item href="#">
+              Home
+            </b-navbar-item>
+            <b-navbar-item href="#">
+              Documentation
+            </b-navbar-item>
+          </template>
+
+          <template slot="end">
+            <b-navbar-item tag="div">
+              <div class="buttons">
+                <a class="button is-primary">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                  Log in
+                </a>
+              </div>
+            </b-navbar-item>
+          </template>
+        </b-navbar>
+      </section>
     </div>
-    <router-view />
+    <!--   <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <div>
+
+    </div>
+    <footer>
+
+    </footer>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  export default {
+    name: 'app',
+    components: {
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+      // Store Homepage as var Homepage --> Do not save as just Homepage
+
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  /*#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  } */
+  /* Resize items of navbar */
+  .itemHeight{
+    height: 100px;
+
+  }
+  /*Resize just the img element of Navbar */
+  .navbar-item img{
+    max-height: 100px;
+  }
+
+  .navbar {
+    background-color: #BCB8B9;
+    min-height: 100px ;
+    position: relative;
+    z-index: 30;
+  }
+
+  .button.is-primary {
+    background-color: #00ADDA;
+    border-color: transparent;
+    color: white;
+  }
+
+  .box.is-primary{
+    background-color: #00ADDA;
+  }
+
+  .hero.is-link {
+    background-color : #181a1b  ;
+  }
+
+
 </style>
